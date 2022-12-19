@@ -1,0 +1,84 @@
+<!-- 
+1) Simple Counter App!
+2) Make a Button that says "Click Me"
+3) When the button is clicked, the counter should increment by 1
+4) Display the Number in the #counterDisplay
+5) Make a Reset Button that resets the counter to 0
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <!-- add goolge font quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .container {
+      width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    #counterDisplay {
+      font-size: 50px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Counter App</h1>
+    <div id="counterDisplay">0</div>
+    <button id="clickMe">Click Me</button>
+    <button id="reset">Reset</button>
+  </div>
+</body>
+<script>
+  // 1) Select the elements
+  const counterDisplay = document.querySelector('#counterDisplay');
+  const clickMe = document.querySelector('#clickMe');
+  const reset = document.querySelector('#reset');
+  // 2) Create a variable to hold the counter
+  let counter = 0;
+  // 3) Create a function to increment the counter
+  function incrementCounter() {
+    counter++;
+    counterDisplay.innerText = counter;
+  }
+  // 4) Create a function to reset the counter
+  function resetCounter() {
+    counter = 0;
+    counterDisplay.innerText = counter;
+  }
+  // 5) Add Event Listeners
+  clickMe.addEventListener('click', incrementCounter);
+  reset.addEventListener('click', resetCounter);
+</script>
+
+</html>
